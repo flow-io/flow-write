@@ -23,7 +23,7 @@
   "keywords": [
     "stream",
     "writable",
-    "graceful-js",
+    "graceful-fs",
     "flow",
     "flow.io"
   ],
