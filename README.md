@@ -15,7 +15,8 @@ $ npm install flow-write
 
 ``` javascript
 // File write stream generator:
-var writeStream = require( 'flow-write' );
+var eventStream = require( 'event-stream' ),
+	writeStream = require( 'flow-write' );
 
 // Create some data...
 var data = new Array( 1000 );
@@ -23,16 +24,16 @@ for ( var i = 0; i < data.length; i++ ) {
 	data[ i ] = Math.random();
 }
 
+// Create a readable stream:
+var readStream = eventStream.readArray( data );
+
 // Create a new stream, passing along an optional error handler:
 var stream = writeStream()
 	.path( __dirname + '/path/to/output/file.json' )
 	.stream( onError );
 
-// Write the data to the stream...
-for ( var j = 0; j < data.length; j++ ) {
-	stream.write( data[ j ] );
-}
-stream.end();
+// Pipe the data to the stream...
+readStream.pipe( stream );
 
 // Error handler:
 function onError( error ) {
