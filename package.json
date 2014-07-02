@@ -1,6 +1,6 @@
 {
   "name": "flow-write",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "Thin wrapper for graceful-fs file write stream.",
   "author": {
     "name": "Athan Reines",
