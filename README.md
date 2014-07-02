@@ -14,7 +14,6 @@ $ npm install flow-write
 ## Examples
 
 ``` javascript
-// File write stream generator:
 var eventStream = require( 'event-stream' ),
 	writeStream = require( 'flow-write' );
 
