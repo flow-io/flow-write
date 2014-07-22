@@ -18,7 +18,7 @@
   "main": "./lib",
   "repository": {
     "type": "git",
-    "url": "git://github.com/kgryte/flow-write.git"
+    "url": "git://github.com/flow-io/flow-write.git"
   },
   "keywords": [
     "stream",
@@ -28,7 +28,7 @@
     "flow.io"
   ],
   "bugs": {
-    "url": "https://github.com/kgryte/flow-write/issues"
+    "url": "https://github.com/flow-io/flow-write/issues"
   },
   "dependencies": {
     "graceful-fs": "~3.0.2"
