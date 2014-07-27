@@ -47,7 +47,7 @@ var stream = writeStream()
 	.path( 'path/to/file/destination' )
 	.stream( clbk );
 
-readStream.pipe( wStream );
+readStream.pipe( stream );
 ``` 
 
 
