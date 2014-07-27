@@ -10,6 +10,46 @@ Thin wrapper for [graceful-fs](https://github.com/isaacs/node-graceful-fs) file 
 $ npm install flow-write
 ```
 
+## API
+
+To create a writeStream factory,
+
+``` javascript
+var writeStream = require( 'flow-write' ),
+	wStream = writeStream();
+```
+
+### wStream.path( [filepath] )
+
+This method is a setter/getter. If no output `filepath` is provided, returns the output `filepath`. You configure the stream factory by specifying an output `filepath`:
+
+``` javascript
+wStream.path( 'path/to/output/destination' );
+```
+
+### wStream.stream( [clbk] )
+
+Provided a `filepath` has been specified, to create a new writeStream:
+
+``` javascript
+var stream = wStream.stream( clbk );
+```
+
+Where the optional `clbk` is invoked upon stream `end` and has an `error` as its first argument. If no write errors, `error` is `null`.
+
+
+## Usage
+
+Methods are chainable:
+
+``` javascript
+var stream = writeStream()
+	.path( 'path/to/file/destination' )
+	.stream( clbk );
+
+readStream.pipe( wStream );
+``` 
+
 
 ## Examples
 
